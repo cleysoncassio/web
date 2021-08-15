@@ -5,7 +5,6 @@ sudo: true
 python:
   - 3.9
 
-
 Install:
   - pip install pipenv
   - pipenv sync -d
