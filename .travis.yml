@@ -5,10 +5,6 @@ sudo: true
 python:
   - 3.9
 
-env:
-  global:
-    - PIPENV_VENV_IN_PROJECT=1
-    - PIPENV_IGNORE_VIRTUALENVS=1
 
 Install:
   - pip install pipenv
