@@ -1,4 +1,5 @@
-# appwebdjango
+# web
+Aplicação disponível em: https://appwebdjango.herokuapp.com/
 
 [![Build Status](https://travis-ci.com/cleysoncassio/web.svg?branch=master)](https://travis-ci.com/cleysoncassio/web)
 [![Updates](https://pyup.io/repos/github/cleysoncassio/web/shield.svg)](https://pyup.io/repos/github/cleysoncassio/web/)
