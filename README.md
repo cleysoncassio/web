@@ -1,4 +1,5 @@
 # web
+-Projeto de estudo:
 
 Aplicação disponível em: https://appwebdjango.herokuapp.com/
 
