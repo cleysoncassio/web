@@ -17,3 +17,5 @@ Install:
 script:
   - pipenv run flake8
 
+after_success:
+  - codecov
