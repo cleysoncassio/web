@@ -12,7 +12,7 @@ env:
 
 Install:
   - pip install pipenv
-  - pipenv sync
+  - pipenv sync -d
 
 script:
   - pipenv run flake8
