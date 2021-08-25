@@ -17,6 +17,3 @@ Install:
 script:
   - pipenv run flake8
   - pipenv run pytest
-
-after_success:
-  - codecov
