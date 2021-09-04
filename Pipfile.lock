@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9159927b5c09f5d730e1adbeeb72b5b170052bfe187eb94d5b45cb45e20098fd"
+            "sha256": "88a8de69baaba175f2f67bf005b7c13ccea1cb905185d6856a952ce82c55f322"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -32,6 +32,14 @@
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
             "version": "==21.2.0"
         },
+        "collectfast": {
+            "hashes": [
+                "sha256:2f6abc8cab7ec5114a7a9a3660ab629ec142556957220aa82857dc9b4381490d",
+                "sha256:e716b2234ab50b5f1010b0d78c3fae8c6aebdb8b7c66ef5568503c33c1a5e19a"
+            ],
+            "index": "pypi",
+            "version": "==2.2.0"
+        },
         "dj-database-url": {
             "hashes": [
                 "sha256:4aeaeb1f573c74835b0686a2b46b85990571159ffc21aa57ecd4d1e1cb334163",
@@ -47,6 +55,14 @@
             ],
             "index": "pypi",
             "version": "==3.2.7"
+        },
+        "django-storages": {
+            "hashes": [
+                "sha256:c823dbf56c9e35b0999a13d7e05062b837bae36c518a40255d522fbe3750fbb4",
+                "sha256:f28765826d507a0309cfaa849bd084894bc71d81bf0d09479168d44785396f80"
+            ],
+            "markers": "python_version >= '3.5'",
+            "version": "==1.11.1"
         },
         "gunicorn": {
             "hashes": [
@@ -176,6 +192,14 @@
             ],
             "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==0.10.2"
+        },
+        "typing-extensions": {
+            "hashes": [
+                "sha256:49f75d16ff11f1cd258e1b988ccff82a3ca5570217d7ad8c5f48205dd99a677e",
+                "sha256:d8226d10bc02a29bcc81df19a26e56a9647f8b0a6d4a83924139f4a8b01f17b7",
+                "sha256:f1d25edafde516b146ecd0613dabcc61409817af4766fbbcfb8d1ad4ec441a34"
+            ],
+            "version": "==3.10.0.2"
         }
     },
     "develop": {

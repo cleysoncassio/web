@@ -11,6 +11,7 @@ pytest-django = "*"
 python-decouple = "*"
 dj-database-url = "*"
 psycopg2-binary = "*"
+collectfast = "*"
 
 [dev-packages]
 flake8 = "*"
