@@ -147,8 +147,8 @@ if AWS_ACCESS_KEY_ID:
 
     AWS_DEFAULT_ACL = None
 
-# STATIC ASSETS
-# ----------------------------------------------------------------------
+    # STATIC ASSETS
+    # ----------------------------------------------------------------------
 
     STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
     STATIC_S3_PATH = '/static/'
@@ -156,8 +156,8 @@ if AWS_ACCESS_KEY_ID:
     STATIC_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{STATIC_S3_PATH}/'
     ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
-# UPLOAD MEDIA FOLDER
-# ----------------------------------------------------------------------
+    # UPLOAD MEDIA FOLDER
+    # ----------------------------------------------------------------------
 
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
     DEFAULT_S3_PATH = '/media/'
@@ -167,7 +167,7 @@ if AWS_ACCESS_KEY_ID:
     INSTALLED_APPS.append('s3_folder_storage')
     INSTALLED_APPS.append('storages')
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+    # Default primary key field type
+    # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
