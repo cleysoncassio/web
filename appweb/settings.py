@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'collectfast'
+    'collectfast',
     'django.contrib.staticfiles',
     'appweb.base',
 ]
@@ -162,7 +162,7 @@ ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
 DEFAULT_S3_PATH = 'media'
 MEDIA_ROOT = f'/{DEFAULT_S3_PATH}/'
-MEDIA_URL = 'f//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{DEFAULT_S3_PATH}/'
+MEDIA_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{DEFAULT_S3_PATH}/'
 
 INSTALLED_APPS.append('s3_folder_storage')
 INSTALLED_APPS.append('storages')
