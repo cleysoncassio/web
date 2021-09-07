@@ -14,10 +14,10 @@ from functools import partial
 from pathlib import Path
 from decouple import config, Csv
 import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -29,7 +29,6 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-
 
 # Application definition
 
@@ -102,7 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -116,20 +114,21 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 # Configuração de ambiente de desenvolvimento
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Caso o app suporte upload
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 COLLECTFAST_ANABLED = False
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 
@@ -141,7 +140,7 @@ if AWS_ACCESS_KEY_ID:
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400', }
     AWS_PRELOAD_METADATA = True
     AWS_AUTO_CREATE_BUCKET = False
-    AWS_QUERYSTRING_AUTH = True
+    AWS_QUERYSTRING_AUTH = False
 
     COLLECTFAST_ANABLED = True
 
@@ -151,7 +150,7 @@ if AWS_ACCESS_KEY_ID:
     # ----------------------------------------------------------------------
 
     STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
-    STATIC_S3_PATH = '/static/'
+    STATIC_S3_PATH = 'static'
     STATIC_ROOT = f'/{STATIC_S3_PATH}/'
     STATIC_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{STATIC_S3_PATH}/'
     ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
@@ -160,7 +159,7 @@ if AWS_ACCESS_KEY_ID:
     # ----------------------------------------------------------------------
 
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
-    DEFAULT_S3_PATH = '/media/'
+    DEFAULT_S3_PATH = 'media'
     MEDIA_ROOT = f'/{DEFAULT_S3_PATH}/'
     MEDIA_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{DEFAULT_S3_PATH}/'
 
