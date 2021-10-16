@@ -14,11 +14,13 @@ psycopg2-binary = "*"
 collectfast = "*"
 django-s3-folder-storage = "*"
 celery = "*"
+django-debug-toolbar = "*"
 
 [dev-packages]
 flake8 = "*"
 pytest-cov = "*"
 codecov = "*"
+django-debug-toolbar = "*"
 
 [requires]
 python_version = "3.9"
