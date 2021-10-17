@@ -12,11 +12,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from functools import partial
 from pathlib import Path
-from decouple import config, Csv
+import sentry_sdk
+from decouple import Csv, config
 import dj_database_url
+from sentry_sdk.integrations.django import DjangoIntegration
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -136,9 +137,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
-COLLECTFAST_ANABLED = True
-STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
+COLLECTFAST_ANABLED = False
+
 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 
@@ -148,23 +148,22 @@ if AWS_ACCESS_KEY_ID:
     AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400', }
-    AWS_S3_CUSTOM_DOMAIN = None
     AWS_PRELOAD_METADATA = True
     AWS_AUTO_CREATE_BUCKET = False
     AWS_QUERYSTRING_AUTH = True
-    COLLECTFAST_STRATEGY = 'collectfast.strategies.boto3.Boto3Strategy'
-    COLLECTFAST_ANABLED = True
+    AWS_S3_CUSTOM_DOMAIN = None
+    AWS_DEFAULT_ACL = 'private'
 
-    AWS_DEFAULT_ACL = 'public-read'
+    COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
+    COLLECTFAST_ENABLED = True
 
     # STATIC ASSETS
     # ----------------------------------------------------------------------
-
+    STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
     STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
     STATIC_S3_PATH = 'static'
-    STATIC_ROOT = '/{STATIC_S3_PATH}/'
-    STATIC_URL = '//{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/{STATIC_S3_PATH}/'
-
+    STATIC_ROOT = f'/{STATIC_S3_PATH}/'
+    STATIC_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{STATIC_S3_PATH}/'
     ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
     # UPLOAD MEDIA FOLDER
@@ -172,8 +171,8 @@ if AWS_ACCESS_KEY_ID:
 
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
     DEFAULT_S3_PATH = 'media'
-    MEDIA_ROOT = '/{DEFAULT_S3_PATH}/'
-    MEDIA_URL = '//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{DEFAULT_S3_PATH}/'
+    MEDIA_ROOT = f'/{DEFAULT_S3_PATH}/'
+    MEDIA_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{DEFAULT_S3_PATH}/'
 
     INSTALLED_APPS.append('s3_folder_storage')
     INSTALLED_APPS.append('storages')
@@ -181,4 +180,12 @@ if AWS_ACCESS_KEY_ID:
     # Default primary key field type
     # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-    DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SENTRY_DSN = config('SENTRY_DSN', default=None)
+if SENTRY_DSN:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
+    )
