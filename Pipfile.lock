@@ -179,11 +179,10 @@
         },
         "kombu": {
             "hashes": [
-                "sha256:8eefdb136d15449743f5db3d7af53cf0f1eb283c011ed670986c745bef268b81",
-                "sha256:af17a0ab0c7508dd50cc9d1378d0cf68566a953fca8aaae4e8dab107a79aa440"
+                "sha256:0f5d0763fb916808f617b886697b2be28e6bc35026f08e679697fc814b48a608",
+                "sha256:d36f0cde6a18d9eb7b6b3aa62a59bfdff7f5724689850e447eca5be8efc9d501"
             ],
-            "markers": "python_version >= '3.7'",
-            "version": "==5.2.0"
+            "version": "==5.2.2"
         },
         "packaging": {
             "hashes": [
