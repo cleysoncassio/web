@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'collectfast',
     'django.contrib.staticfiles',
     'appweb.base',
+    'cliente',
 
 ]
 
@@ -91,7 +92,11 @@ default_db_url = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 parse_database = partial(dj_database_url.parse, conn_max_age=600)
 
 DATABASES = {
-    'default': config('DATABASE_URL', default=default_db_url, cast=parse_database)
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+    }
 }
 
 # Password validation
@@ -156,10 +161,11 @@ if AWS_ACCESS_KEY_ID:
 
     COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
     COLLECTFAST_ENABLED = True
+
     # STATIC ASSETS
     # ----------------------------------------------------------------------
     STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-    STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
+    STATICFILES_STORAGE = "s3_folder_storage.s3.StaticStorage"
     STATIC_S3_PATH = 'static'
     STATIC_ROOT = f'/{STATIC_S3_PATH}/'
     STATIC_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{STATIC_S3_PATH}/'
