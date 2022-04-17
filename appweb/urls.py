@@ -16,12 +16,17 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import TemplateView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home', include('appweb.base.urls')),
+    path('', include('appweb.base.urls')),
+    path('', TemplateView.as_view(template_name="list.html"), name="list"),
+    path('cliente/', include('cliente.urls')),
+
 ]
+
 
 if settings.DEBUG:
     import debug_toolbar

@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name=”description” content="Sistema de Operações Portuárias">
   <meta name=”author” content="Cleyson Cassio">
- {{ form.media }}
-  <title>{% block title %} Siop {% endblock title %}</title>
+
+  <title>Siop</title>
   <!-- Favicon -->
   <link rel="shortcut icon" href="{% static 'img/fav1.png' %}" type="image/x-icon">
   <!-- Custom styles -->
@@ -20,6 +20,8 @@
     <!-- Custom scripts -->
     <script src="{% static 'js/script.js'%}"></script>
 </head>
+{% block content %} {% endblock %}
+{% block body %}
 <body>
   <div class="layer"></div>
 <!-- ! Body -->
@@ -29,13 +31,14 @@
   <aside class="sidebar">
     <div class="sidebar-start">
         <div class="sidebar-head">
-            <a href="{% url 'home' %}" class="logo-wrapper" title="home">
+            <a href="{% url 'base:home' %}" class="logo-wrapper" title="home">
                 <span class="sr-only">Home</span>
                 <span class="icon logo" aria-hidden="true"></span>
                 <div class="logo-text">
                     <span class="logo-title">Siop</span>
                     <span class="logo-subtitle">Dashboard</span>
                 </div>
+
             </a>
             <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
                 <span class="sr-only">Toggle menu</span>
@@ -45,11 +48,11 @@
         <div class="sidebar-body">
             <ul class="sidebar-body-menu">
                 <li>
-                    <a class="active" href="{% url 'base:home' %}"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
+                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
-                        <span class="icon document" aria-hidden="true"></span>Assinaturas
+                        <span class="icon document" aria-hidden="true"></span>Relatório
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
                             <span class="icon arrow-down" aria-hidden="true"></span>
@@ -57,25 +60,10 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="posts.html">Cliente</a>
-                        </li>
-                          <li>
-                            <a href="posts.html">Trancamentos</a>
+                            <a href="posts.html">Energia</a>
                         </li>
                         <li>
-                            <a href="new-post.html">Recessos</a>
-                        </li>
-                           <li>
-                            <a href="new-post.html">Ocupação</a>
-                        </li>
-                           <li>
-                            <a href="new-post.html">Comissão de Profesores</a>
-                        </li>
-                          <li>
-                            <a href="new-post.html">Comissão de Consultores</a>
-                        </li>
-                           <li>
-                            <a href="new-post.html">Encerramento</a>
+                            <a href="new-post.html">Água</a>
                         </li>
                     </ul>
                 </li>
@@ -158,8 +146,8 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="show-cat-btn" href="##">
-                        <span class="icon user-3" aria-hidden="true"></span>Usuários
+                    <a class="show-cat-btn" href="{% url 'cliente:cliente_list' %}">
+                        <span class="icon user-3" aria-hidden="true"></span>Clientes
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
                             <span class="icon arrow-down" aria-hidden="true"></span>
@@ -167,10 +155,10 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="{% static 'registrar.html' %}">Clientes</a>
+                            <a href="{% url 'cliente:cliente_list' %}">Cadastro</a>
                         </li>
                         <li>
-                            <a href="{% static 'registrado.html'%}">Visitantes</a>
+                            <a href="users-02.html">Users-02</a>
                         </li>
                     </ul>
                 </li>
@@ -193,8 +181,8 @@
     </div>
 </aside>
   <div class="main-wrapper">
-
     <!-- ! Main nav -->
+      {% block nav %}
     <nav class="main-nav--bg">
   <div class="container main-nav">
     <div class="main-nav-start">
@@ -278,7 +266,7 @@
           </span>
         </button>
         <ul class="users-item-dropdown nav-user-dropdown dropdown">
-          <li><a href="{% static 'home/novo.html' %}">
+          <li><a href="##">
               <i data-feather="user" aria-hidden="true"></i>
               <span>Profile</span>
             </a></li>
@@ -286,7 +274,7 @@
               <i data-feather="settings" aria-hidden="true"></i>
               <span>Account settings</span>
             </a></li>
-          <li><a class="danger" href="newclient.html">
+          <li><a class="danger" href="##">
               <i data-feather="log-out" aria-hidden="true"></i>
               <span>Log out</span>
             </a></li>
@@ -295,7 +283,9 @@
     </div>
   </div>
 </nav>
-    {% block main %}<!-- ! Main -->
+      {% endblock nav %}
+      {% block main %}
+    <!-- ! Main -->
     <main class="main users chart-page" id="skip-target">
       <div class="container">
         <h2 class="main-title">Painel de Comando</h2>
@@ -305,7 +295,7 @@
               <div class="stat-cards-icon primary">
               <center id="parent">
 	            <img id="lampada" class="apagada" src="http://i.stack.imgur.com/b983w.jpg
-	            <button id= "botao" onclick="alterarEstado();";
+	            <button id="botao" onclick="alterarEstado();"
                 </center>
               </div>
             </article>
@@ -430,7 +420,7 @@
                     </td>
                     <td>
                       <div class="pages-table-img">
-                        <picture><source srcset="/static/img/avatar/avatar-illustrated-02.png" type="image/webp"><img src="/static/img/avatar/avatar-illustrated-02.webp" alt="User Name"></picture>
+                        <picture><source srcset="/static/img/avatar/avatar-illustrated-02.webp" type="image/webp"><img src="/static/img/avatar/avatar-illustrated-02.png" alt="User Name"></picture>
                         Janiere
                       </div>
                     </td>
@@ -455,7 +445,7 @@
                       <label class="users-table__checkbox">
                         <input type="checkbox" class="check">
                         <div class="categories-table-img">
-                          <picture><source srcset="/static/img/categories/03.png" type="/static/image/webp"><img src="/static/img/categories/03.webp" alt="category"></picture>
+                          <picture><source srcset="/static/img/categories/04.webp" type="/static/image/webp"><img src="/static/img/categories/04.jpg" alt="category"></picture>
                         </div>
                       </label>
                     </td>
@@ -464,7 +454,7 @@
                     </td>
                     <td>
                       <div class="pages-table-img">
-                        <picture><source srcset="/static/img/avatar/avatar-illustrated-04.png" type="image/webp"><img src="/static/img/avatar/avatar-illustrated-04.webp" alt="User Name"></picture>
+                        <picture><source srcset="/static/img/avatar/avatar-illustrated-01.webp" type="image/webp"><img src="/static/img/avatar/avatar-illustrated-01.png" alt="User Name"></picture>
                         Bianca
                       </div>
                     </td>
@@ -588,8 +578,8 @@
       </div>
     </main>
       {% endblock main %}
+      {% block footer %}
     <!-- ! Footer -->
-      {% block footer%}
     <footer class="footer">
   <div class="container footer--flex">
     <div class="footer-start">
@@ -607,5 +597,5 @@
   </div>
 </div>
 </body>
-
+{% endblock body %}
 </html>

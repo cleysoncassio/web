@@ -5,5 +5,5 @@ from appweb.base.views import home
 
 app_name = 'base'
 urlpatterns = [
-    path('', home, name='home'),
+    path('home', home, name='home'),
 ]
