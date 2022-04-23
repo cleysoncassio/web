@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Cliente(models.Model):
@@ -27,6 +28,9 @@ class Cliente(models.Model):
 
     def get_full_city(self):
         return f"{self.city} - {self.state}"
+
+    def get_absolute_url(self):
+        return reverse("cliente:cliente-update", kwargs={"id": self.id})
 
 
 
