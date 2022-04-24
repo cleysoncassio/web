@@ -32,6 +32,9 @@ class Cliente(models.Model):
     def get_absolute_url(self):
         return reverse("cliente:cliente-update", kwargs={"id": self.id})
 
+    def get_delete_url(self):
+        return reverse("cliente:cliente-delete", kwargs={"id": self.id})
+
 
 
     class Meta:
