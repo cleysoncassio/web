@@ -17,13 +17,19 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import TemplateView
+from django.contrib.auth.decorators import login_required
+from appweb.base import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('appweb.base.urls')),
-    path('', TemplateView.as_view(template_name="list.html"), name="list"),
-    path('cliente/', include('cliente.urls')),
+    path('', login_required(TemplateView.as_view(template_name="base.html")), name="base"),
+    path('login/', views.login, name="login"),
+    path('logout/', views.login, name="logout"),
+    path('login/submit', views.submit_login, name="submit_login"),
+    path('cliente/', include('cliente.urls'))
+
 
 ]
 
