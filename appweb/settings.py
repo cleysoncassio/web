@@ -145,7 +145,7 @@ LOGIN_URL = '/login/'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
-COLLECTFAST_ANABLED = True
+COLLECTFAST_ANABLED = False
 
 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
