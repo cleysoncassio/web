@@ -26,7 +26,7 @@ urlpatterns = [
     path('', include('appweb.base.urls')),
     path('', login_required(TemplateView.as_view(template_name="base.html")), name="base"),
     path('login/', views.login, name="login"),
-    path('logout/', views.login, name="logout"),
+    path('logout/', views.logout, name="logout"),
     path('login/submit', views.submit_login, name="submit_login"),
     path('cliente/', include('cliente.urls'))
 
