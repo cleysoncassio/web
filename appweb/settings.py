@@ -145,7 +145,7 @@ LOGIN_URL = '/login/'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
-COLLECTFAST_ANABLED = False
+COLLECTFAST_ANABLED = True
 
 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
@@ -163,7 +163,7 @@ if AWS_ACCESS_KEY_ID:
     AWS_DEFAULT_ACL = 'public'
 
     COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
-    COLLECTFAST_ENABLED = False
+    COLLECTFAST_ENABLED = True
 
     # STATIC ASSETS
     # ----------------------------------------------------------------------
