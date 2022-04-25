@@ -6,6 +6,7 @@ from django.contrib.auth import (
 )
 from django.contrib import messages
 
+
 def home(request):
     return render(request, 'base/home.html')
 

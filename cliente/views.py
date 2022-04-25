@@ -22,7 +22,7 @@ class ClienteListView(ListView):
         name = self.request.GET.get("name")
         if name:
             object_list = self.model.objects.filter(
-                Q(first_name__icontains=name)  | Q(last_name__icontains=name)
+                Q(first_name__icontains=name) | Q(last_name__icontains=name)
             )
         else:
             object_list = self.model.objects.all()

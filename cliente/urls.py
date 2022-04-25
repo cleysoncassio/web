@@ -1,6 +1,5 @@
 from django.urls import path
 
-#from cliente.views import novo
 
 from .views import (
 
@@ -19,4 +18,3 @@ urlpatterns = [
     path('<int:id>/', ClienteUpdateView.as_view(), name="cliente-update"),
     path('<int:id>/delete', ClienteDeleteView.as_view(), name="cliente-delete"),
 ]
-

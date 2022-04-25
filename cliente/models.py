@@ -15,7 +15,7 @@ class Cliente(models.Model):
     city = models.CharField(max_length=30)
     created_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
-    active = models.BooleanField(default=True)#para ativar e desativar cliente
+    active = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -35,8 +35,5 @@ class Cliente(models.Model):
     def get_delete_url(self):
         return reverse("cliente:cliente-delete", kwargs={"id": self.id})
 
-
-
     class Meta:
         db_table = "cliente"
-
