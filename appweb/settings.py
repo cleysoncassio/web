@@ -163,7 +163,7 @@ if AWS_ACCESS_KEY_ID:
     AWS_DEFAULT_ACL = 'public'
 
     COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
-    COLLECTFAST_ENABLED = False
+    COLLECTFAST_ENABLED = True
 
     # STATIC ASSETS
     # ----------------------------------------------------------------------
