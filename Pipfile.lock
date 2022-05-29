@@ -62,11 +62,10 @@
         },
         "celery": {
             "hashes": [
-                "sha256:1664b8cf5051c86188e86f1afb85213927f92b8818e2315e34b010da0d767b98",
-                "sha256:4d858a8fe53c07a9f0cbf8cf1da28e8abe5464d0aba5713bf83908e74277734b"
+                "sha256:138420c020cd58d6707e6257b6beda91fd39af7afde5d36c6334d175302c0e14",
+                "sha256:fafbd82934d30f8a004f81e8f7a062e31413a23d444be8ee3326553915958c6d"
             ],
-            "index": "pypi",
-            "version": "==5.2.0"
+            "version": "==5.2.7"
         },
         "certifi": {
             "hashes": [
