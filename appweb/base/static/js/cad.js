@@ -110,6 +110,7 @@ function showhide() {
     div.style.display = "inline";
   }
 }
+<<<<<<< HEAD
 © 2022 GitHub, Inc.
 Terms
 Privacy
@@ -122,3 +123,5 @@ API
 Training
 Blog
 About
+=======
+>>>>>>> ed10898b734632d5ecb3a284beb0b1dbc742d51c

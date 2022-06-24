@@ -25,9 +25,6 @@ pip = "*"
 install = "*"
 "axado.django-localflavor-br" = "*"
 views = "*"
-kwargs = "*"
-update = "*"
-requests = "*"
 
 [dev-packages]
 flake8 = "*"
