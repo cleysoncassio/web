@@ -3,7 +3,6 @@
 SIOP- Sistema integrado de Operações
 
 
-**implementação do cadastro de cliente**
 
 Aplicação disponível em: https://appwebdjango.herokuapp.com/
 
