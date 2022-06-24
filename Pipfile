@@ -1,0 +1,39 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+gunicorn = "*"
+setuptools = "*"
+pytest-django = "*"
+python-decouple = "*"
+dj-database-url = "*"
+psycopg2-binary = "*"
+collectfast = "*"
+django-s3-folder-storage = "*"
+celery = "*"
+django-debug-toolbar = "*"
+sentry-sdk = "*"
+pathlib = "*"
+six = "*"
+django-crispy-forms = "*"
+django-input-mask = "*"
+django-localflavor = "*"
+pip = "*"
+install = "*"
+"axado.django-localflavor-br" = "*"
+views = "*"
+kwargs = "*"
+update = "*"
+requests = "*"
+
+[dev-packages]
+flake8 = "*"
+pytest-cov = "*"
+codecov = "*"
+django-debug-toolbar = "*"
+
+[requires]
+python_version = "3.9"
