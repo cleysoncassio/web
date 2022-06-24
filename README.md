@@ -1,6 +1,7 @@
 # web
--Projeto de estudo: 
-SIOP- Sistema integrado de Operações
+-Projeto de estudo:
+proposta de criação de um sistema de cadastro de alunos
+
 
 
 
