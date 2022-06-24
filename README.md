@@ -1,7 +1,7 @@
 # web
 -Projeto de estudo: 
-
-
+SIOP- Sistema integrado de Operações
+Projeto de estudos
 
 
 Aplicação disponível em: https://appwebdjango.herokuapp.com/
