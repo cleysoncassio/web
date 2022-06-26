@@ -94,8 +94,9 @@
                             <a href="pages.html">All pages</a>
                         </li>
                         <li>
-                            <a href="new-page.html">Add new page</a>     <span class="icon notification active" aria-hidden="true"></span>
-        </button>
+                            <a href="new-page.html">Add new page</a>
+                            <span class="icon notification active" aria-hidden="true"></span>
+        </li>
         <ul class="users-item-dropdown notification-dropdown dropdown">
           <li>
             <a href="##">
@@ -136,12 +137,14 @@
             <a class="link-to-page" href="##">Go to Notifications page</a>
           </li>
         </ul>
-      </div>
+            </div>
       <div class="nav-user-wrapper">
         <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
           <span class="sr-only">My profile</span>
           <span class="nav-user-img">
-            <picture><source srcset="/static/img/avatar/avatar-illustrated-02.webp" type="image/webp"><img src="/static/img/avatar/avatar-illustrated-02.png" alt="User name"></picture>
+            <picture><source srcset="/static/img/avatar/avatar-illustrated-02.webp" type="image/webp">
+                <img src="/static/img/avatar/avatar-illustrated-02.png" alt="User name">
+            </picture>
           </span>
         </button>
         <ul class="users-item-dropdown nav-user-dropdown dropdown">
@@ -162,8 +165,6 @@
     </div>
 
   {% block main %}
-
-
   <!-- ! barra de pesquisa -->
    <form>
           <div class="form-group mb -1">
@@ -249,11 +250,11 @@
                           href="?page={{ page_obj.next_page_number}}">Próximo</a></li>
                         {% else %}
                       <li class="page-item disabled"><a class="page-link" href="#">Próximo</a></li>
-                        {% endif %}
-                    </li>
+                      {% endif %}
+                        </li>
                   </ul>
-     </main>
-</body>
+        </main>
+    </body>
       {% endblock main %}
       {% block footer %}
 
@@ -272,6 +273,3 @@
   </div>
 </footer>
       {% endblock footer %}
-  </div>
-</div>
-</body>
