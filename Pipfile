@@ -25,6 +25,8 @@ pip = "*"
 install = "*"
 "axado.django-localflavor-br" = "*"
 views = "*"
+"manage.py" = "*"
+virtualenv = "*"
 
 [dev-packages]
 flake8 = "*"
@@ -33,4 +35,4 @@ codecov = "*"
 django-debug-toolbar = "*"
 
 [requires]
-python_version = "3.9.13"
+python_version = "3.9"
