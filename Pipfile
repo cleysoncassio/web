@@ -27,6 +27,7 @@ install = "*"
 views = "*"
 "manage.py" = "*"
 virtualenv = "*"
+requests = "*"
 
 [dev-packages]
 flake8 = "*"
