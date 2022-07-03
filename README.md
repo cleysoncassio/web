@@ -1,6 +1,5 @@
 # web
 -Projeto de estudo: 
-SIOP- Sistema integrado de Operações
 
 www.siop.app.br
 
