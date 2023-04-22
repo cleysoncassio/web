@@ -187,12 +187,8 @@
             "version": "==1.3.7.1"
         },
         "django-localflavor": {
-            "hashes": [
-                "sha256:6593865dc671333b3edc88e729e6d384d00b6db7891ef5d3a65db831a40050d2",
-                "sha256:ac2fa377bbcba4cae95e97077d9e77c7f22b3d93e4845e2e133ba7e664043a44"
-            ],
-            "index": "pypi",
-            "version": "==3.1"
+            "hashes": [],
+            "version": "==4.0"
         },
         "django-s3-folder-storage": {
             "hashes": [
