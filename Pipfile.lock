@@ -257,12 +257,8 @@
             "version": "==1.0.1"
         },
         "kombu": {
-            "hashes": [
-                "sha256:37cee3ee725f94ea8bb173eaab7c1760203ea53bbebae226328600f9d2799610",
-                "sha256:8b213b24293d3417bcf0d2f5537b7f756079e3ea232a8386dcc89a59fd2361a4"
-            ],
-            "markers": "python_version >= '3.7'",
-            "version": "==5.2.4"
+            "hashes": [],
+            "version": "==5.3.1"
         },
         "manage.py": {
             "hashes": [
