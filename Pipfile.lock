@@ -118,11 +118,8 @@
             "version": "==1.1.1"
         },
         "click-repl": {
-            "hashes": [
-                "sha256:94b3fbbc9406a236f176e0506524b2937e4b23b6f4c0c0b2a0a83f8a64e9194b",
-                "sha256:cd12f68d745bf6151210790540b4cb064c7b13e571bc64b6957d98d120dacfd8"
-            ],
-            "version": "==0.2.0"
+            "hashes": [],
+            "version": "==0.3.0"
         },
         "collectfast": {
             "hashes": [
