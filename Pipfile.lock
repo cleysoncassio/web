@@ -523,12 +523,8 @@
             "version": "==0.3"
         },
         "vine": {
-            "hashes": [
-                "sha256:4c9dceab6f76ed92105027c49c823800dd33cacce13bdedc5b914e3514b7fb30",
-                "sha256:7d3b1624a953da82ef63462013bbd271d3eb75751489f9807598e8f340bd637e"
-            ],
-            "markers": "python_version >= '3.6'",
-            "version": "==5.0.0"
+            "hashes": [],
+            "version": "==5.1.0"
         },
         "virtualenv": {
             "hashes": [
